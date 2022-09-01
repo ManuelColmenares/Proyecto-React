@@ -1,4 +1,5 @@
 import './App.css';
+import ItemListContainer from './components/ItemListContainer';
 import NavBar from './components/NavBar';
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
     <div className="App container-fluid">
       <NavBar />
       <hr />
+      <ItemListContainer name="Item List Container" />
     </div>
   );
 }
