@@ -3,7 +3,7 @@ import React from "react";
 const Item = ({ nombre, descripcion, imagen, precio }) => {
 	return (
 		<div className="card">
-			<img src={imagen} className="card-img-top" alt={nombre} />
+			<img src={"img/imgProductos/"+imagen} className="card-img-top" alt={nombre} />
 			<div className="card-body">
 				<h5 className="card-title text-center">
 					<b>{nombre}</b>
