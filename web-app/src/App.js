@@ -2,6 +2,7 @@ import './App.css';
 import ItemListContainer from './components/ItemListContainer';
 import NavBar from './components/NavBar';
 import ItemCount from './components/ItemCount';
+import ItemDetailContainer from './components/ItemDetailContainer';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <hr />
       <ItemListContainer name="Item List Container" />
       <ItemCount stock={5} initial={1} onAdd={0} />
+      <ItemDetailContainer />
     </div>
   );
 }
