@@ -1,17 +1,17 @@
 import './App.css';
-import ItemListContainer from './components/ItemListContainer';
-import NavBar from './components/NavBar';
-import ItemCount from './components/ItemCount';
-import ItemDetailContainer from './components/ItemDetailContainer';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import NavBar from './components/NavBar/NavBar';
+import Home from './components/Home/Home';
 
 function App() {
   return (
-    <div className="App container-fluid">
-      <NavBar />
-      <hr />
-      <ItemListContainer name="Item List Container" />
-      <ItemDetailContainer />
-    </div>
+      <BrowserRouter>
+        <NavBar />
+        <Routes>
+          <Route exact path="/" element={ <Home /> } />
+        </Routes>
+      </BrowserRouter>
+
   );
 }
 

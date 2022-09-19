@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import Products from "./mock/Products";
+import Products from "../mock/Products";
 import ItemList from "./ItemList";
+
 
 
 const ItemListContainer = (props) => {
@@ -20,7 +21,7 @@ const ItemListContainer = (props) => {
 
 	return (
 		<div className="container">
-			<h1>{props.name}</h1>
+			<h1 className="text-center">{props.name}</h1>
 			<ItemList items={items} />
 		</div>
 	);

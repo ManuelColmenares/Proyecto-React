@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-import Products from "./mock/Products";
+import Products from "../mock/Products";
 import ItemDetail from "./ItemDetail";
 
 const ItemDetailContainer = () => {
@@ -27,7 +27,7 @@ const ItemDetailContainer = () => {
 	}, []);
 
 	return (
-		<div>
+		<div className="container">
 			<ItemDetail item={item} />
 		</div>
 	);
