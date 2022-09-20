@@ -25,7 +25,7 @@ const ItemDetailContainer = () => {
 			console.log(error);
 		});
 
-	}, [id]);
+	}, []);
 
 	return (
 		<div className="container">

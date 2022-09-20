@@ -1,5 +1,5 @@
 import React from "react";
-import ItemCount from "./ItemCount";
+import ItemCount from "../ItemCount/ItemCount";
 
 const ItemDetail = ({ item }) => {
     return (
@@ -19,7 +19,7 @@ const ItemDetail = ({ item }) => {
             </div>
         </div>
 
-    )
-}
+    );
+};
 
 export default ItemDetail;
