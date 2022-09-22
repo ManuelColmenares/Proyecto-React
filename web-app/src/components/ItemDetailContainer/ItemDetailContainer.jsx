@@ -6,7 +6,7 @@ import Products from "../mock/Products";
 import ItemDetail from "./ItemDetail";
 
 const ItemDetailContainer = () => {
-	const [item, setItem] = useState({})
+	const [item, setItem] = useState([]);	
 	const {id} = useParams();
 
 	useEffect(() => {
@@ -18,14 +18,15 @@ const ItemDetailContainer = () => {
 			}, 2000);
 		});
 
-		getItem.then((info) => {
+		getItem
+		.then((info) => {
 			setItem(info);
 		})
 		.catch((error) => {
 			console.log(error);
 		});
 
-	}, []);
+	},[]);
 
 	return (
 		<div className="container">
