@@ -2,27 +2,18 @@ import React from "react";
 import { useState } from "react";
 
 const ItemCount = ({ stock, initial, onAdd }) => {
-	const [cantidad, setCantidad] = useState(initial);
-	const [itemStock, setItemStock] = useState(stock);
-	const [itemAdd, setItemAdd] = useState(onAdd);
+	const [count, setCount] = useState(initial);
 
-	const decremento = (valor) => {
-		if (valor > 0) {
-			setCantidad(valor);
-		}
+	const sumar = () => {
+		count < stock && setCount(count + 1);
 	};
 
-	const incremento = (valor) => {
-		if (valor <= itemStock) {
-			setCantidad(valor);
-		}
+	const restar = () => {
+		count > initial && setCount(count - 1);
 	};
 
-	const agregarProducto = () => {
-		if (cantidad <= itemStock) {
-			setItemStock(itemStock - cantidad);
-			setItemAdd(itemAdd + cantidad);
-		}
+	const agregar = () => {
+		onAdd(count)
 	};
 
 	return (
@@ -36,35 +27,28 @@ const ItemCount = ({ stock, initial, onAdd }) => {
 								type="button"
 								className="btn btn-secondary"
 								value="-"
-								onClick={() => {
-									decremento(cantidad - 1);
-								}}
+								onClick={restar} 
 							/>
 							<input
 								type="text"
 								className="form-control text-center"
-								value={cantidad}
-								onChange={() => {}}
+								value={count}
 							/>
 							<input
 								type="button"
 								className="btn btn-secondary"
 								value="+"
-								onClick={() => {
-									incremento(cantidad + 1);
-								}}
+								onClick={sumar}
 							/>
 						</div>
 						<div className="d-grid gap-2 py-2">
 							<input
 								type="button"
-								value="Agregar"
-								onClick={() => {
-									agregarProducto();
-								}}
+								value="Agregar al Carrito"
+								onClick={agregar}
 							/>
 						</div>
-						<p>Productos Seleccionados: {itemAdd} </p>
+						<p>Productos Seleccionados: {count} </p>
 					</div>
 				</div>
 			</div>
