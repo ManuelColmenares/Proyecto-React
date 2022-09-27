@@ -11,7 +11,7 @@ const ItemListContainer = (props) => {
 		const getProductos = new Promise((resolve) => {
 			setTimeout(() => {
 				resolve(Products);
-			}, 2000);
+			}, 500);
 		});
 
 		getProductos.then((respuesta) => {

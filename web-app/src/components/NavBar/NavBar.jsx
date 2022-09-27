@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import logo from "../../components/img/logo.png";
 import CartWitget from "./CartWidget";
 
@@ -7,7 +8,7 @@ const NavBar = () => {
 		<div>
 			<nav className="navbar navbar-expand-lg bg-navBar my-3">
 				<div className="container">
-					<a className="navbar-brand title-dyc" href="index.html">
+					<Link to="/" className="navbar-brand title-dyc">
 						<img
 							src={logo}
 							alt="Dulce y Crujiente"
@@ -16,7 +17,7 @@ const NavBar = () => {
 							className="d-inline-block align-text-center me-2"
 						/>
 						Dulce y Crujiente
-					</a>
+					</Link>
 
 					<div className="collapse navbar-collapse justify-content-center">
 						<ul className="navbar-nav">

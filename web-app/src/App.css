@@ -47,3 +47,23 @@
 	font-size: 2em;
 	font-weight: 500;
 }
+.container-counter {
+	box-shadow: 0px 0px 10px 1px rgba(148, 148, 148, 0.588);
+	width: 200px;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 15px 0px;
+}
+.container-btn {
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px 0px;
+}
+.tbtn-cart {
+	display: flex;
+	justify-content:  space-between;
+}

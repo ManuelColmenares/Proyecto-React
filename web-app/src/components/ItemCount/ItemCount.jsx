@@ -17,41 +17,13 @@ const ItemCount = ({ stock, initial, onAdd }) => {
 	};
 
 	return (
-		<div>
-			<div className="container py-5">
-				<div className="row justify-content-center">
-					<div className="col-md-2">
-						<p className="text-center">Torta Tres Leche</p>
-						<div className="input-group">
-							<input
-								type="button"
-								className="btn btn-secondary"
-								value="-"
-								onClick={restar} 
-							/>
-							<input
-								type="text"
-								className="form-control text-center"
-								value={count}
-							/>
-							<input
-								type="button"
-								className="btn btn-secondary"
-								value="+"
-								onClick={sumar}
-							/>
-						</div>
-						<div className="d-grid gap-2 py-2">
-							<input
-								type="button"
-								value="Agregar al Carrito"
-								onClick={agregar}
-							/>
-						</div>
-						<p>Productos Seleccionados: {count} </p>
-					</div>
-				</div>
+		<div className="container-counter">
+			<div className="container-btn">
+				<button type="button" className="btn btn-secondary btn-sm" onClick={restar}>-</button>
+				<p className="p-counter fs-4">{count}</p>
+				<button type="button" className="btn btn-secondary btn-sm" onClick={sumar}>+</button>
 			</div>
+			<button type="button" className="btn btn-secondary btn-sm" onClick={agregar}>Agregar al Carrito</button>
 		</div>
 	);
 };
