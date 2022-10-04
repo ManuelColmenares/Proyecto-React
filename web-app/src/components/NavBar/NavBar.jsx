@@ -1,9 +1,27 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../../firebaseConfig";
 import logo from "../../components/img/logo.png";
 import CartWitget from "./CartWidget";
 
 const NavBar = () => {
+	const [cat, setCat] = useState([]);
+
+	useEffect (() => {
+		const categoryColecction = collection(db, 'categories');
+
+		getDocs(categoryColecction).then((resp) => {
+			const categorias = resp.docs.map((cat) => {
+				return {
+					id: cat.id,
+					...cat.data(),
+				};
+			});
+			setCat(categorias);
+		});
+	}, [])
 	return (
 		<div>
 			<nav className="navbar navbar-expand-lg bg-navBar my-3">
@@ -19,29 +37,35 @@ const NavBar = () => {
 						Dulce y Crujiente
 					</Link>
 
-					<div className="collapse navbar-collapse justify-content-center">
-						<ul className="navbar-nav">
+					<div className="justify-content-center">
+						<ul>
+							{cat.map((categoria) => (
+								<NavLink 
+									key={categoria.id}
+									style={{ margin: '0px 8px', textDecoration: 'none', color:'GrayText' }}
+									to={`/category/${categoria.path}`}
+								>
+									{categoria.name}
+								</NavLink>
+							))}
+						</ul>
+						{/* <ul className="navbar-nav">
 							<li className="nav-item">
 								<a className="nav-link active" aria-current="page" href="index.html">
-									Inicio
+									Chocolate
 								</a>
 							</li>
 							<li className="nav-item">
 								<a className="nav-link" href="index.html">
-									Productos
+									RedVelvet
 								</a>
 							</li>
 							<li className="nav-item">
 								<a className="nav-link" href="index.html">
-									Contactanos
+									Tres Leche
 								</a>
 							</li>
-							<li className="nav-item">
-								<a className="nav-link" href="index.html">
-									Nosotros
-								</a>
-							</li>
-						</ul>
+						</ul> */}
 					</div>
 					<CartWitget />
 				</div>
