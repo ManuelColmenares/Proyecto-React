@@ -1,5 +1,4 @@
-import {createContext} from 'react';
-import {useState} from 'react';
+import {createContext, useState} from 'react';
 
 export const CartContext = createContext();
 
@@ -46,6 +45,15 @@ const CartProvider = (props) => {
         return count;
     };
 
+    const totalPrecio = () => {
+        const totalPrice = [...cart];
+        let count = 0;
+        totalPrice.forEach((producto) => {
+            count = count + producto.cantidad * producto.precio;
+        });
+        return count;
+    }
+
     const deleteOne = (id) => {
         const productsFiltered = cart.filter((prod) => prod.id !== id);
         setCart(productsFiltered);
@@ -60,7 +68,8 @@ const CartProvider = (props) => {
                 addToCart,
                 deleteAll,
                 totalUnidades,
-                deleteOne
+                totalPrecio,
+                deleteOne,
             }
         }
         >

@@ -49,27 +49,13 @@ const NavBar = () => {
 								</NavLink>
 							))}
 						</ul>
-						{/* <ul className="navbar-nav">
-							<li className="nav-item">
-								<a className="nav-link active" aria-current="page" href="index.html">
-									Chocolate
-								</a>
-							</li>
-							<li className="nav-item">
-								<a className="nav-link" href="index.html">
-									RedVelvet
-								</a>
-							</li>
-							<li className="nav-item">
-								<a className="nav-link" href="index.html">
-									Tres Leche
-								</a>
-							</li>
-						</ul> */}
 					</div>
 					<CartWitget />
 				</div>
 			</nav>
+			<div>
+				
+			</div>
 		</div>
 	);
 };

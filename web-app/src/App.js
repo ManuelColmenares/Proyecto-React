@@ -5,6 +5,7 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import CartProvider from './components/Context/CartContext';
 import Cart from './components/ItemCount/Cart/Cart';
+import Checkout from './components/Checkout/Checkout';
 
 
 function App() {
@@ -13,10 +14,11 @@ function App() {
       <BrowserRouter>
         <NavBar />
         <Routes>
-          <Route exact path="/" element={<ItemListContainer />} />
+          <Route exact path="/" element={<ItemListContainer tittle="NUESTROS PRODUCTOS" />} />
           <Route path="/category/:categoryName" element={<ItemListContainer />} />
           <Route exact path="/detail/:id" element={<ItemDetailContainer />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/checkout" element={<Checkout />} />
         </Routes>
       </BrowserRouter>
     </CartProvider>

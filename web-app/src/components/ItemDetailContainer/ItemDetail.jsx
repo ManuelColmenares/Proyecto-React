@@ -26,11 +26,15 @@ const ItemDetail = ({ item }) => {
                         <p className="card-text- text-center">${item.precio}</p>
                         <div className="d-flex justify-content-center">
                             {cantidad ? 
-                                <div>
-                                    <p>Producto Añadido...</p>
-                                    <Link to="/cart" className="btn btn-secondary">Finalizar Compra</Link>
+                                <div className="container">
+                                    <p className="card-text- text-center">Producto Añadido...</p>
+                                    <div className="d-flex justify-content-center gap-3">
+                                        <Link to="/cart" className="btn btn-secondary mr-50">Finalizar Compra</Link>
+
+                                        <Link to="/" className="btn btn-secondary">Continuar comprando</Link>
+                                    </div>
                                 </div> 
-                            : <ItemCount stock={5} initial={1} onAdd={onAdd} />}
+                            : <ItemCount stock={item.stock} initial={1} onAdd={onAdd} />}
                         </div>
                         
                         
