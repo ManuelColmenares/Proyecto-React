@@ -14,10 +14,15 @@ const ItemDetail = ({ item }) => {
         addToCart(item, cantidad);
     }
     return (
-        <div className="card md-3">
+        <div className="card md-3 shadow p-3 mb-5 bg-body rounded">
             <div className="row g-0">
                 <div className="col-md-4">
-                    <img src={item.imagen} className="img-fluid rounded-start" alt={item.nombre} />
+                    <img 
+                        src={item.imagen} 
+                        width="300px"
+                        className="img-fluid rounded" 
+                        alt={item.nombre} 
+                    />
                 </div>
                 <div className="col-md-8">
                     <div className="card-body">

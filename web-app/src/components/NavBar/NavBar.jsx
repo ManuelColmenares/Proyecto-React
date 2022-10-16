@@ -9,7 +9,7 @@ import CartWitget from "./CartWidget";
 const NavBar = () => {
 	const [cat, setCat] = useState([]);
 
-	useEffect (() => {
+	useEffect(() => {
 		const categoryColecction = collection(db, 'categories');
 
 		getDocs(categoryColecction).then((resp) => {
@@ -40,9 +40,9 @@ const NavBar = () => {
 					<div className="justify-content-center">
 						<ul>
 							{cat.map((categoria) => (
-								<NavLink 
+								<NavLink
 									key={categoria.id}
-									style={{ margin: '0px 8px', textDecoration: 'none', color:'GrayText' }}
+									style={{ margin: '0px 8px', textDecoration: 'none', color: 'GrayText' }}
 									to={`/category/${categoria.path}`}
 								>
 									{categoria.name}
@@ -54,7 +54,7 @@ const NavBar = () => {
 				</div>
 			</nav>
 			<div>
-				
+
 			</div>
 		</div>
 	);
